@@ -47,7 +47,7 @@ final class JPlatform
 	const COPYRIGHT = 'Copyright (C) 2005 - 2019 Open Source Matters, Inc. All rights reserved.';
 
 	// Link text.
-	const LINK_TEXT = '<a href="https://www.joomla.org">Joomla!</a> is Free Software released under the GNU General Public License. we have configure it to sqash';
+	const LINK_TEXT = '<a href="https://www.joomla.org">Joomla!</a> is Free Software released under the GNU General Public License. configure it to sqash';
 
 	/**
 	 * Compares two a "PHP standardized" version number against the current Joomla Platform version.
