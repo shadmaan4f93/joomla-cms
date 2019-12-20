@@ -1,23 +1,19 @@
-joomla:
-  container_name: myjoomla
-  restart: always
-  image: joomla
-  environment:
-    - MYSQL_PORT_3306_TCP=3306
-    - JOOMLA_DB_HOST=myjoomladb
-    - JOOMLA_DB_PASSWORD=joomla_secret
-    - JOOMLA_DB_NAME=joomla
-  ports:
-    - 80:80
-  volumes:
-    - ./html:/var/www/html
-  links:
-    - joomladb:mysql
-joomladb:
-  container_name: myjoomladb
-  restart: always
-  image: mysql:5.7
-  environment:
-      - MYSQL_ROOT_PASSWORD=joomla_secret
-  volumes:
-      - ./mysql:/var/lib/mysql
+version: '3.1'
+
+services:
+  joomla:
+    image: joomla
+    restart: always
+    links:
+      - joomladb:mysql
+    ports:
+      - 8080:80
+    environment:
+      JOOMLA_DB_HOST: joomladb
+      JOOMLA_DB_PASSWORD: example
+
+  joomladb:
+    image: mysql:5.6
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: example
