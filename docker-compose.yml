@@ -1,4 +1,3 @@
-version: '3'
 joomla:
   container_name: myjoomla
   restart: always
